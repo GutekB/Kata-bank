@@ -10,7 +10,7 @@ class Transactions implements TransactionCollection
     /** @var Transaction[] */
     private array $transactions = [];
 
-    public function add(Transaction $transaction)
+    public function add(Transaction $transaction): void
     {
         $this->transactions[] = $transaction;
     }

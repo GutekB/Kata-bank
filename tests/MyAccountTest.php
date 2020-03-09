@@ -1,9 +1,9 @@
 <?php
 
-use App\Calendars\FixedCalendar;
 use App\Collections\Transactions;
 use App\MyAccount;
 use PHPUnit\Framework\TestCase;
+use Tests\TestCalendars\FixedCalendar;
 use Tests\TestPrinters\SpyPrinter;
 
 class MyAccountTest extends TestCase
@@ -33,21 +33,21 @@ class MyAccountTest extends TestCase
         $this->sut = new MyAccount($this->transactions, $this->calendar, $this->printer);
     }
 
-    public function testShouldAddDepositTransaction()
+    public function testShouldAddDepositTransaction(): void
     {
         $this->assertEmpty($this->transactions->all());
         $this->sut->deposit(100);
         $this->assertNotEmpty($this->transactions->all());
     }
 
-    public function testShouldAddWithdrawTransaction()
+    public function testShouldAddWithdrawTransaction(): void
     {
         $this->assertEmpty($this->transactions->all());
         $this->sut->withdraw(200);
         $this->assertNotEmpty($this->transactions->all());
     }
 
-    public function testShouldPrintStatement()
+    public function testShouldPrintStatement(): void
     {
         $this->sut->printStatement();
 

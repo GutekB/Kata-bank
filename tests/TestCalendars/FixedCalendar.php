@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Calendars;
+namespace Tests\TestCalendars;
 
 use App\Contracts\Calendar;
 use DateTimeImmutable;

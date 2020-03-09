@@ -7,7 +7,7 @@ use App\ValueObject\Transaction;
 
 class ConsolePrinter implements TransactionPrinter
 {
-    private function printHeader()
+    private function printHeader(): void
     {
         echo 'Date | Amount | Balance' . PHP_EOL;
     }

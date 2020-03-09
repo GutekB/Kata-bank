@@ -6,6 +6,6 @@ use App\ValueObject\Transaction;
 
 interface TransactionCollection
 {
-    public function add(Transaction $transaction);
+    public function add(Transaction $transaction): void;
     public function all(): array;
 }
